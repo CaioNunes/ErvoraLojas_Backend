@@ -19,6 +19,7 @@ public class ItemController {
     private ItemService itemService;
 
 
+    //Consultar todos os itens
     @GetMapping
     public List<Item> getItens(){
         return itemService.getItens();

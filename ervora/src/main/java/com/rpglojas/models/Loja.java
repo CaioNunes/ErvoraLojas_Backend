@@ -20,6 +20,9 @@ public class Loja {
     @JoinColumn(name = "id_cidade")
     private Cidade cidade;
 
+    @Column(name = "nome")
+    private String nome;
+
     @OneToMany(mappedBy = "loja", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ItemLoja> itens;
 
@@ -45,6 +48,14 @@ public class Loja {
 
     public void setCidade(Cidade cidade) {
         this.cidade = cidade;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public List<ItemLoja> getItens() {

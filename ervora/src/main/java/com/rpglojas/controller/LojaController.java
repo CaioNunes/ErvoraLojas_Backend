@@ -1,7 +1,9 @@
 package com.rpglojas.controller;
 
 import com.rpglojas.models.Cidade;
+import com.rpglojas.models.Loja;
 import com.rpglojas.service.CidadeService;
+import com.rpglojas.service.LojaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,14 +14,15 @@ import java.util.List;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping(value = "/cidades")
-public class CidadeController {
+@RequestMapping(value = "/lojas")
+public class LojaController {
 
     @Autowired
-    private CidadeService cidadeService;
+    private LojaService lojaService;
 
     @GetMapping
-    public List<Cidade> getCidades(){
-        return cidadeService.getCidades();
+    public List<Loja> getLojas(){
+        return lojaService.getLojas();
     }
+
 }

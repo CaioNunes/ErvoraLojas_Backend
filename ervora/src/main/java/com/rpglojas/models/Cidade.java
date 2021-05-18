@@ -1,11 +1,12 @@
 package com.rpglojas.models;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "CIDADE")
-public class Cidade {
+public class Cidade implements Serializable {
 
     @Id
     @GeneratedValue

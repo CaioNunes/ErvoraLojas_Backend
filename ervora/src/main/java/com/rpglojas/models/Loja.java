@@ -1,11 +1,12 @@
 package com.rpglojas.models;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name = "LOJA")
-public class Loja {
+public class Loja implements Serializable {
 
     @Id
     @GeneratedValue

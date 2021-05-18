@@ -1,8 +1,7 @@
-package com.example.ervora.controller;
+package com.rpglojas.controller;
 
-import com.example.ervora.models.Item;
-import com.example.ervora.repository.ItemRepository;
-import com.example.ervora.service.ItemService;
+import com.rpglojas.models.Item;
+import com.rpglojas.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

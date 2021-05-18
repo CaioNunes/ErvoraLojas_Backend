@@ -1,4 +1,4 @@
-package com.example.ervora.models;
+package com.rpglojas.models;
 
 import javax.persistence.*;
 import java.math.BigDecimal;

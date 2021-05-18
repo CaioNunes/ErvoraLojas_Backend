@@ -1,4 +1,4 @@
-package com.example.ervora;
+package com.rpglojas;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

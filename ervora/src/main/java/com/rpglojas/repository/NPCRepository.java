@@ -1,6 +1,6 @@
-package com.example.ervora.repository;
+package com.rpglojas.repository;
 
-import com.example.ervora.models.NPC;
+import com.rpglojas.models.NPC;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface NPCRepository extends JpaRepository<NPC, Long> {

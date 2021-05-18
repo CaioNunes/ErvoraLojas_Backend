@@ -1,6 +1,6 @@
-package com.example.ervora.repository;
+package com.rpglojas.repository;
 
-import com.example.ervora.models.Item;
+import com.rpglojas.models.Item;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

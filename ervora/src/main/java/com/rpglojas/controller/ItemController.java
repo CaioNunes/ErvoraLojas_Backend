@@ -23,4 +23,5 @@ public class ItemController {
     public List<Item> getItens(){
         return itemService.getItens();
     }
+
 }

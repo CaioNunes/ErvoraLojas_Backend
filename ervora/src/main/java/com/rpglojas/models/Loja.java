@@ -15,7 +15,7 @@ public class Loja implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "id_npc")
-    private NPC vendedor;
+    private Personagem vendedor;
 
     @ManyToOne
     @JoinColumn(name = "id_cidade")
@@ -24,7 +24,7 @@ public class Loja implements Serializable {
     @Column(name = "nome")
     private String nome;
 
-    @OneToMany(mappedBy = "loja", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "idLoja", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ItemLoja> itens;
 
     public Long getId() {
@@ -35,11 +35,11 @@ public class Loja implements Serializable {
         this.id = id;
     }
 
-    public NPC getVendedor() {
+    public Personagem getVendedor() {
         return vendedor;
     }
 
-    public void setVendedor(NPC vendedor) {
+    public void setVendedor(Personagem vendedor) {
         this.vendedor = vendedor;
     }
 

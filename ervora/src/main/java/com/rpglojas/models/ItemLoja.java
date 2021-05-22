@@ -13,13 +13,11 @@ public class ItemLoja {
     @Column(name = "id_item_loja")
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "id_item")
-    private Item item;
+    @Column(name = "id_item")
+    private Long idItem;
 
-    @ManyToOne
-    @JoinColumn(name = "id_loja")
-    private Loja loja;
+    @Column(name = "id_loja")
+    private Long idLoja;
 
     @Column(name = "preco")
     private BigDecimal preco;
@@ -35,20 +33,20 @@ public class ItemLoja {
         this.id = id;
     }
 
-    public Item getItem() {
-        return item;
+    public Long getIdItem() {
+        return idItem;
     }
 
-    public void setItem(Item item) {
-        this.item = item;
+    public void setIdItem(Long idItem) {
+        this.idItem = idItem;
     }
 
-    public Loja getLoja() {
-        return loja;
+    public Long getIdLoja() {
+        return idLoja;
     }
 
-    public void setLoja(Loja loja) {
-        this.loja = loja;
+    public void setIdLoja(Long idLoja) {
+        this.idLoja = idLoja;
     }
 
     public BigDecimal getPreco() {

@@ -1,6 +1,7 @@
 package com.rpglojas.models;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.List;
 
 @Entity
@@ -22,7 +23,14 @@ public class Item {
     @JoinColumn(name = "id_item_qualidade")
     private ItemQualidade qualidadeItem;
 
-    @OneToMany(mappedBy = "item", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ManyToOne
+    @JoinColumn(name = "id_tipo_item")
+    private ItemTipo tipoItem;
+
+    @Column(name = "peso")
+    private BigDecimal peso;
+
+    @OneToMany(mappedBy = "idItem", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ItemLoja> lojas;
 
     public Long getId() {
@@ -63,5 +71,21 @@ public class Item {
 
     public void setLojas(List<ItemLoja> lojas) {
         this.lojas = lojas;
+    }
+
+    public ItemTipo getTipoItem() {
+        return tipoItem;
+    }
+
+    public void setTipoItem(ItemTipo tipoItem) {
+        this.tipoItem = tipoItem;
+    }
+
+    public BigDecimal getPeso() {
+        return peso;
+    }
+
+    public void setPeso(BigDecimal peso) {
+        this.peso = peso;
     }
 }

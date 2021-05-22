@@ -20,4 +20,22 @@ public class CidadeService {
         return cidadeRepository.findAll();
     }
 
+    public void removerCidadePorId(Long id){
+        cidadeRepository.deleteById(id);
+    }
+
+    public Cidade getCidade(Long id){
+        Optional<Cidade> cidadeData = cidadeRepository.findById(id);
+
+        if(cidadeData.isPresent()){
+            return cidadeData.get();
+        } else {
+            return null;
+        }
+    }
+
+    public void adicionarCidade(Cidade cidade){
+        cidadeRepository.save(cidade);
+    }
+
 }

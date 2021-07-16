@@ -9,6 +9,10 @@ public class CidadeDTO implements Serializable {
     private String nome;
     private BigDecimal tesouro;
 
+    public CidadeDTO(){
+
+    }
+
     public CidadeDTO(Long id, String nome, BigDecimal tesouro){
         this.id = id;
         this.nome = nome;

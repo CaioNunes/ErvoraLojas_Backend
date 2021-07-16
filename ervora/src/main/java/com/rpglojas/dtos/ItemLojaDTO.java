@@ -1,30 +1,16 @@
-package com.rpglojas.models;
+package com.rpglojas.dtos;
 
-import javax.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-@Entity
-@Table(name ="ITEM_LOJA")
+public class ItemLojaDTO implements Serializable {
 
-public class ItemLoja {
-
-    @Id
-    @GeneratedValue
-    @Column(name = "id_item_loja")
     private Long id;
-
-    @ManyToOne
-    @JoinColumn(name = "id_item")
-    private Item item;
-
-    @ManyToOne
-    @JoinColumn(name = "id_loja")
-    private Loja loja;
-
-    @Column(name = "preco")
+    private ItemDTO item;
+    private LojaDTO loja;
     private BigDecimal preco;
-
-    @Column(name = "quantidade")
     private Integer quantidade;
 
     public Long getId() {
@@ -35,19 +21,19 @@ public class ItemLoja {
         this.id = id;
     }
 
-    public Item getItem() {
+    public ItemDTO getItem() {
         return item;
     }
 
-    public void setItem(Item item) {
+    public void setItem(ItemDTO item) {
         this.item = item;
     }
 
-    public Loja getLoja() {
+    public LojaDTO getLoja() {
         return loja;
     }
 
-    public void setLoja(Loja loja) {
+    public void setLoja(LojaDTO loja) {
         this.loja = loja;
     }
 

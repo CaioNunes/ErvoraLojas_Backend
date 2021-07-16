@@ -30,7 +30,7 @@ public class Item {
     @Column(name = "peso")
     private BigDecimal peso;
 
-    @OneToMany(mappedBy = "idItem", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "item", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<ItemLoja> lojas;
 
     public Long getId() {

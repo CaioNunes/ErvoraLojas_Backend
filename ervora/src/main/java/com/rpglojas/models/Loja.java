@@ -24,7 +24,7 @@ public class Loja implements Serializable {
     @Column(name = "nome")
     private String nome;
 
-    @OneToMany(mappedBy = "idLoja", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "loja", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<ItemLoja> itens;
 
     public Long getId() {

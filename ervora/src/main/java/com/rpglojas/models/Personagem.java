@@ -32,6 +32,10 @@ public class Personagem implements Serializable {
     @Column(name = "is_participante_guilda")
     private Boolean isParticipanteGuilda;
 
+    @ManyToOne
+    @JoinColumn(name = "id_estilo_vida")
+    private EstiloVida estiloVida;
+
     @OneToMany(mappedBy = "idPersonagem", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<PersonagemMissao> missoes;
 
@@ -89,5 +93,13 @@ public class Personagem implements Serializable {
 
     public void setMissoes(List<PersonagemMissao> missoes) {
         this.missoes = missoes;
+    }
+
+    public EstiloVida getEstiloVida() {
+        return estiloVida;
+    }
+
+    public void setEstiloVida(EstiloVida estiloVida) {
+        this.estiloVida = estiloVida;
     }
 }

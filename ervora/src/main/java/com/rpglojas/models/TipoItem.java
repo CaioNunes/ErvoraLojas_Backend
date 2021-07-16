@@ -1,14 +1,16 @@
 package com.rpglojas.models;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
-@Table(name = "ITEM_QUALIDADE")
-public class ItemQualidade {
+public class TipoItem {
 
     @Id
     @GeneratedValue
-    @Column(name = "id_item_qualidade")
+    @Column(name = "id_tipo_item")
     private Long id;
 
     @Column(name = "descricao")

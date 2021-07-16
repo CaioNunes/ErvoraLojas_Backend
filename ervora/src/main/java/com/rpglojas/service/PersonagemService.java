@@ -1,10 +1,13 @@
 package com.rpglojas.service;
 
+import com.rpglojas.converters.PersonagemConverter;
+import com.rpglojas.dtos.PersonagemDTO;
 import com.rpglojas.models.Personagem;
 import com.rpglojas.repository.PersonagemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,6 +37,20 @@ public class PersonagemService {
 
     public void adicionarPersonagem(Personagem personagem){
         personagemRepository.save(personagem);
+    }
+
+    public List<PersonagemDTO> listarNpcs(){
+        List<Personagem> npcs = personagemRepository.consultarNpcs();
+
+        List<PersonagemDTO> npcsDTO = new ArrayList<>();
+
+        if(npcs != null && !npcs.isEmpty()){
+            PersonagemConverter converter = new PersonagemConverter();
+            npcs.forEach(npc -> npcsDTO.add(converter.convertToDTO(npc)));
+        }
+
+        return npcsDTO;
+
     }
 
 }

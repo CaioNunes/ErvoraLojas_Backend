@@ -1,6 +1,7 @@
 package com.rpglojas.dtos;
 
 import com.rpglojas.models.Cidade;
+import com.rpglojas.models.EstiloVida;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -10,6 +11,7 @@ public class PersonagemDTO implements Serializable {
     private Long id;
     private String nome;
     private BigDecimal tesouro;
+    private EstiloVida estiloVida;
     private CidadeDTO cidade;
     private Boolean isNpc;
     private Boolean isParticipanteGuilda;
@@ -23,6 +25,10 @@ public class PersonagemDTO implements Serializable {
         this.cidade = cidadeDTO;
         this.isNpc = isNpc;
         this.isParticipanteGuilda = isParticipanteGuilda;
+    }
+
+    public PersonagemDTO(){
+
     }
 
     public Long getId() {
@@ -71,5 +77,13 @@ public class PersonagemDTO implements Serializable {
 
     public void setParticipanteGuilda(Boolean participanteGuilda) {
         isParticipanteGuilda = participanteGuilda;
+    }
+
+    public EstiloVida getEstiloVida() {
+        return estiloVida;
+    }
+
+    public void setEstiloVida(EstiloVida estiloVida) {
+        this.estiloVida = estiloVida;
     }
 }

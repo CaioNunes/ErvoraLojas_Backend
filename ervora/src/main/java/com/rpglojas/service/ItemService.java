@@ -1,7 +1,10 @@
 package com.rpglojas.service;
 
+import com.rpglojas.converters.ItemConverter;
+import com.rpglojas.dtos.ItemDTO;
 import com.rpglojas.models.Item;
 import com.rpglojas.repository.ItemRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +16,9 @@ public class ItemService {
 
     @Autowired
     ItemRepository itemRepository;
+
+    @Autowired
+    private ModelMapper modelMapper;
 
     public List<Item> getItens(){
         return itemRepository.findAll();
@@ -27,5 +33,11 @@ public class ItemService {
             return null;
 
         }
+    }
+
+    public void cadastrarItem(ItemDTO item) {
+        Item entity = modelMapper.map(item, Item.class);
+
+        itemRepository.save(entity);
     }
 }

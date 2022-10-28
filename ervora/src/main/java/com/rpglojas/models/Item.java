@@ -1,10 +1,15 @@
 package com.rpglojas.models;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.List;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "ITEM")
 public class Item {
 
@@ -30,62 +35,10 @@ public class Item {
     @Column(name = "peso")
     private BigDecimal peso;
 
+    @Column(name ="preco_base")
+    private BigDecimal precoBase;
+
     @OneToMany(mappedBy = "item", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<ItemLoja> lojas;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public ItemQualidade getQualidadeItem() {
-        return qualidadeItem;
-    }
-
-    public void setQualidadeItem(ItemQualidade qualidadeItem) {
-        this.qualidadeItem = qualidadeItem;
-    }
-
-    public List<ItemLoja> getLojas() {
-        return lojas;
-    }
-
-    public void setLojas(List<ItemLoja> lojas) {
-        this.lojas = lojas;
-    }
-
-    public ItemTipo getTipoItem() {
-        return tipoItem;
-    }
-
-    public void setTipoItem(ItemTipo tipoItem) {
-        this.tipoItem = tipoItem;
-    }
-
-    public BigDecimal getPeso() {
-        return peso;
-    }
-
-    public void setPeso(BigDecimal peso) {
-        this.peso = peso;
-    }
 }

@@ -1,9 +1,12 @@
 package com.rpglojas.models;
 
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "tipo_item")
+@NoArgsConstructor
 public class ItemTipo {
 
     @Id
@@ -13,6 +16,10 @@ public class ItemTipo {
 
     @Column(name = "descricao")
     private String descricao;
+
+    public ItemTipo(Long id) {
+        this.id = id;
+    }
 
     public Long getId() {
         return id;

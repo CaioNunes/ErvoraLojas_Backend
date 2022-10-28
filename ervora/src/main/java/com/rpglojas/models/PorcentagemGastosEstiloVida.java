@@ -15,7 +15,7 @@ public class PorcentagemGastosEstiloVida {
 
     @ManyToOne
     @JoinColumn(name = "id_tipo_item")
-    private TipoItem tipoItem;
+    private ItemTipo tipoItem;
 
     @ManyToOne
     @JoinColumn(name = "id_estilo_vida")
@@ -32,11 +32,11 @@ public class PorcentagemGastosEstiloVida {
         this.id = id;
     }
 
-    public TipoItem getTipoItem() {
+    public ItemTipo getTipoItem() {
         return tipoItem;
     }
 
-    public void setTipoItem(TipoItem tipoItem) {
+    public void setTipoItem(ItemTipo tipoItem) {
         this.tipoItem = tipoItem;
     }
 
